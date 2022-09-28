@@ -67,6 +67,8 @@ def start(update, context):
     buttons = ButtonMaker()
     buttons.buildbutton("Owner", "https://t.me/Dhruv444")
     buttons.buildbutton("Report Group", "https://t.me/OTDiscussion")
+    buttons.buildbutton("Co-Owner", "https://t.me/Introvertrn")
+    buttons.buildbutton("Report Group 2", "https://t.me/MirrorSociety")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
@@ -75,7 +77,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
         sendMarkup(start_string, context.bot, update.message, reply_markup)
     else:
-        sendMarkup('Not Authorized user, deploy your own mirror-leech bot', context.bot, update.message, reply_markup)
+        sendMarkup('Sorry but You are Not an Authorized user, Come to @DhruvMirrorUpdates', context.bot, update.message, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("Restarting...", context.bot, update.message)
@@ -195,7 +197,7 @@ help_string = f'''
 
 def bot_help(update, context):
     button = ButtonMaker()
-    button.buildbutton("Other Commands", f"https://telegra.ph/{help}")
+    button.buildbutton("Other Commands", f"https://graph.org/{help}")
     reply_markup = InlineKeyboardMarkup(button.build_menu(1))
     sendMarkup(help_string, context.bot, update.message, reply_markup)
 
